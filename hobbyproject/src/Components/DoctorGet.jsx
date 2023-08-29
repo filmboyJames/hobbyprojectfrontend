@@ -20,7 +20,7 @@ function DoctorGet() {
       }
     };
     getDoctor();
-  })
+  },[params.actor])
   
   console.log(doctor)
 

@@ -38,21 +38,21 @@ function Doctor({
 
   console.log(params);
   return (
-    <Card bg="dark">
+    <Card bg="dark" style={{ width: "20rem" }}>
       <Card.Img variant="top" src='https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg' alt={`${number} Doctor`}/>
       <Card.Body>
         <Card.Title>{number} Doctor</Card.Title>
         {/*<Card.Text>*/}
         {/*  {`Companions: ${companions}`}*/}
         {/*</Card.Text>*/}
-        <Card.Text>
+        <Card.Text style={{fontSize:20}}>
           {`Actor: ${actor}`}
         </Card.Text>
-        <Card.Text>
+        <Card.Text style={{fontSize:16}}>
           {`From ${startYear} to ${endYear}`}
         </Card.Text>
       </Card.Body>
-      <Button variant="info" type="button" onClick={() => navigate(`/edit/${_id}`)}>Edit</Button>
+      <Button variant="info" type="button" onClick={() => navigate(`/edit/${actor}`)}>Edit</Button>
       <Button variant="danger" type="button" onClick={() => navigate(`/delete/${actor}`)}>Delete</Button>
     </Card>
   );

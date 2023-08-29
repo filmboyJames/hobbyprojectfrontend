@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function DoctorDeleteConfirm() {
   const params = useParams();
-  console.log(params.name);
+  console.log(params.actor);
   const [doctor, setDoctor] = useState([]);
 
   const navigate = useNavigate();
@@ -16,15 +16,15 @@ function DoctorDeleteConfirm() {
   useEffect(()=>{
     const getDoctor = async () => {
       try {
-        const grab = await axios.get(`http://localhost:8080/doctor/actor/${params.name}`);
-        console.log('RESPONSE: ', grab.data[0]);
-        setDoctor(grab.data[0]);
+        const grab = await axios.get(`http://localhost:8080/doctor/actor/${params.actor}`);
+        console.log('RESPONSE: ', grab.data);
+        setDoctor(grab.data);
       } catch (err) {
         console.log(err)
       }
     };
     getDoctor();
-  }, [params.name])
+  }, [params.actor])
   
   console.log(doctor)
 
@@ -32,9 +32,9 @@ function DoctorDeleteConfirm() {
   <>
       <h1>Are you sure you want to delete this Doctor?</h1>
       <br></br>
-      <Button variant="danger" type="button" onClick={()=> navigate(`/deleted/${params.name}`)}>CONFIRM</Button>
+      <Button variant="danger" type="button" onClick={()=> navigate(`/deleted/${params.actor}`)}>CONFIRM</Button>
       <br></br>
-      <DoctorDisplay number={doctor.number} actor={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions} />
+      <DoctorDisplay number={doctor.number} actor={doctor.actor} startYear={doctor.startYear} endYear={doctor.endYear} />
       </>
   )
 }
