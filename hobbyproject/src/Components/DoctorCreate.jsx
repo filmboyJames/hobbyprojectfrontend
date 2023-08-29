@@ -19,7 +19,7 @@ function DoctorCreate({number, name, companions, startYear, endYear}) {
           "startYear": startYear,
           "endYear": endYear
       }
-        const grab = await axios.post(`http://localhost:2323/doctors/createDoctor`,trial);
+        const grab = await axios.post(`http://localhost:8080/doctor/write`,trial);
         console.log('RESPONSE: ', grab.data);
         setNewDoctor(grab.data);
       } catch (err) {

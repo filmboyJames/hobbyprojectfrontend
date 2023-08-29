@@ -13,7 +13,7 @@ function GetAllDoctors() {
   useEffect(()=>{
     const getDoctor = async () => {
       try {
-        const grab = await axios.get(`http://localhost:2323/doctors/getAll`);
+        const grab = await axios.get(`http://localhost:8080/doctor`);
         console.log('RESPONSE: ', grab.data);
         setDoctor(grab.data);
       } catch (err) {

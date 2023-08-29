@@ -26,7 +26,7 @@ const CreateForm = () => {
             "endYear": endYear
         }
         try {
-            const grab = await axios.post(`http://localhost:2323/doctors/createDoctor`, trial);
+            const grab = await axios.post(`http://localhost:8080/doctor/write`, trial);
             console.log('RESPONSE: ', grab.data);
             setNewDoctor(grab.data);
             console.log('New Doctor is',newDoctor);

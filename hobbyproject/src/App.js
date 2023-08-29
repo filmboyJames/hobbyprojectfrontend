@@ -25,7 +25,7 @@ function App() {
       <header className="App-header">
         <Router>
           <Card>
-            <Card.Img variant="top" height="100%" src="https://upload.wikimedia.org/wikipedia/en/0/05/Doctor_Who_-_Current_Titlecard.png" alt="Doctor Who Logo 2023" />
+            <Card.Img variant="top" height="200" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Doctor-who-logo-removebg.png" alt="Doctor Who Logo 2023" />
           </Card>
           <br />
           <br />

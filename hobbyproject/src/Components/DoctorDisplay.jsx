@@ -42,9 +42,9 @@ function Doctor({
       <Card.Img variant="top" src='https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg' alt={`${number} Doctor`}/>
       <Card.Body>
         <Card.Title>{number} Doctor</Card.Title>
-        <Card.Text>
-          {`Companions: ${companions}`}
-        </Card.Text>
+        {/*<Card.Text>*/}
+        {/*  {`Companions: ${companions}`}*/}
+        {/*</Card.Text>*/}
         <Card.Text>
           {`Actor: ${name}`}
         </Card.Text>
