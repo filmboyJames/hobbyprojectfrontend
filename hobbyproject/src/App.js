@@ -51,13 +51,13 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/search" element={<SearchForm />} />
             <Route path="/getall" element={<GetAllDoctors />} />
-            <Route path="/details/:name" element={<DoctorGet name="name" />} />
+            <Route path="/details/:actor" element={<DoctorGet actor="actor" />} />
             <Route path="/details/none" element={<TryAgain />} />
             <Route path="/edit/:current" element={<EditForm current="current" />} />
             <Route path="/create" element={<CreateForm />} />
-            <Route path="/created/:name" element={<DoctorGet />} />
-            <Route path="/delete/:name" element={<DoctorDeleteConfirm />} />
-            <Route path="/deleted/:name" element={<DoctorDelete name="name"/>} />
+            <Route path="/created/:actor" element={<DoctorGet />} />
+            <Route path="/delete/:actor" element={<DoctorDeleteConfirm />} />
+            <Route path="/deleted/:actor" element={<DoctorDelete actor="actor"/>} />
           </Routes>
         </Router>
       </header>

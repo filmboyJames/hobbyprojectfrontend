@@ -16,7 +16,7 @@ function DoctorDeleteConfirm() {
   useEffect(()=>{
     const getDoctor = async () => {
       try {
-        const grab = await axios.get(`http://localhost:2323/doctors/getDoctorByName/${params.name}`);
+        const grab = await axios.get(`http://localhost:8080/doctor/actor/${params.name}`);
         console.log('RESPONSE: ', grab.data[0]);
         setDoctor(grab.data[0]);
       } catch (err) {
@@ -34,7 +34,7 @@ function DoctorDeleteConfirm() {
       <br></br>
       <Button variant="danger" type="button" onClick={()=> navigate(`/deleted/${params.name}`)}>CONFIRM</Button>
       <br></br>
-      <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions} />
+      <DoctorDisplay number={doctor.number} actor={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions} />
       </>
   )
 }

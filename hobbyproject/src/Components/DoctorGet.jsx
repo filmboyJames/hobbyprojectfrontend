@@ -6,25 +6,25 @@ import DoctorDisplay from './DoctorDisplay';
 
 function DoctorGet() {
   const params = useParams();
-  console.log(params.name);
+  console.log(params.actor);
   const [doctor, setDoctor] = useState([]);
   
   useEffect(()=>{
     const getDoctor = async () => {
       try {
-        const grab = await axios.get(`http://localhost:2323/doctors/getDoctorByName/${params.name}`);
-        console.log('RESPONSE: ', grab.data[0]);
-        setDoctor(grab.data[0]);
+        const grab = await axios.get(`http://localhost:8080/doctor/actor/${params.actor}`);
+        console.log('RESPONSE: ', grab.data);
+        setDoctor(grab.data);
       } catch (err) {
         console.log(err)
       }
     };
     getDoctor();
-  }, [params.name])
+  })
   
   console.log(doctor)
 
-  return <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>;
+  return <DoctorDisplay number={doctor.number} actor={doctor.actor} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>;
 }
 
 export default DoctorGet;

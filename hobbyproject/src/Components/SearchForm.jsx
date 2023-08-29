@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 const DoctorForm = () => {
     const params = useParams();
     const [number, setNumber] = useState("1st");
-    const [name, setName] = useState("William Hartnell");
+    const [actor, setActor] = useState("William Hartnell");
     const [doctors, setDoctors] = useState([]);
 
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ const DoctorForm = () => {
     useEffect(() => {
         const getDoctor = async () => {
             try {
-                const grab = await axios.get(`http://localhost:2323/doctors/getAll`);
+                const grab = await axios.get(`http://localhost:8080/doctor`);
                 console.log('RESPONSE: ', grab.data);
                 setDoctors(grab.data);
             } catch (err) {
@@ -31,11 +31,13 @@ const DoctorForm = () => {
     function numberClick(e, {number}) {
         e.preventDefault();
         let doctorName="";
-        console.log(number)
-        for(let i=0;i<doctors.length;i=i+1){
-            if(doctors[i].number===number) {
-                doctorName = doctors[i].name
+        console.log(number +" type " + typeof number)
+        for(const element of doctors) {
+            console.log(element.number.toString() + " type in for "+ typeof element.number)
+            if (element.number.toString() === number.toString()) {
+                doctorName = element.actor
                 console.log(doctorName)
+                break
             }
         }
         navigate(`/details/${doctorName}`)
@@ -43,7 +45,7 @@ const DoctorForm = () => {
 
     return (
         <>
-            <Form onSubmit={() => navigate(`/details/${name}`)}>
+            <Form onSubmit={() => navigate(`/details/${actor}`)}>
                 <Form.Group className="mb-3"  >
                     <Form.Label>Doctor Number</Form.Label>
                     <Form.Select value={number} onChange={e => { setNumber(e.target.value) }}>
@@ -58,9 +60,9 @@ const DoctorForm = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" >
                     <Form.Label>Actor</Form.Label>
-                    <Form.Select value={name} onChange={e => { setName(e.target.value) }}>
+                    <Form.Select value={actor} onChange={e => { setActor(e.target.value) }}>
                         {doctors.map((doctor) => {
-                            return <option value={doctor.name}>{doctor.name}</option>
+                            return <option value={doctor.actor}>{doctor.actor}</option>
                         })}
                     </Form.Select>
                     <Form.Text className="text-muted">

@@ -7,7 +7,7 @@ import { Col, Container } from 'react-bootstrap';
 
 function GetAllDoctors() {
   const params = useParams();
-  console.log(params.name);
+  console.log(params);
   const [doctor, setDoctor] = useState([]);
   
   useEffect(()=>{
@@ -21,7 +21,7 @@ function GetAllDoctors() {
       }
     };
     getDoctor();
-  }, [params.name])
+  }, [params])
   
   console.log(doctor)
 
@@ -35,9 +35,9 @@ function GetAllDoctors() {
           {
                 doctor.map((doctor) => (
                   <Col>
-                    <DoctorDisplay 
-                    number={doctor.number} name={doctor.name} startYear={doctor.startYear} 
-                    endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>
+                    <DoctorDisplay
+                        number={doctor.number} actor={doctor.actor} startYear={doctor.startYear}
+                        endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>
                   </Col>
 
                 ))

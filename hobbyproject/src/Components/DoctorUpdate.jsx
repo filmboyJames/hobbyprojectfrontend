@@ -17,7 +17,7 @@ function DoctorUpdate() {
         const trial = {
             "startYear": 1971
         }
-        const grab = await axios.patch(`http://localhost:2323/doctors/updateDoctorById/6358ec842ddeeef6086cb722`,trial);
+        const grab = await axios.patch(`http://localhost:8080/doctor/${id}`,trial);
         console.log('RESPONSE: ', grab.data);
         setNewDoctor(grab.data);
       } catch (err) {
@@ -29,7 +29,7 @@ function DoctorUpdate() {
   
   console.log(newDoctor)
 
-  return <DoctorDisplay number={newDoctor.number} name={newDoctor.name} startYear={newDoctor.startYear} endYear={newDoctor.endYear} companions={newDoctor.companions}/>;
+  return <DoctorDisplay number={newDoctor.number} actor={newDoctor.name} startYear={newDoctor.startYear} endYear={newDoctor.endYear} companions={newDoctor.companions}/>;
 }
 
 export default DoctorUpdate;

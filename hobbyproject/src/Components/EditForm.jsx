@@ -30,7 +30,7 @@ const EditForm = ({ current }) => {
         }
 
         try {
-            const grab = await axios.patch(`http://localhost:2323/doctors/updateDoctorById/${params.current}`, trial);
+            const grab = await axios.patch(`http://localhost:8080/doctor/write/${params.current}`, trial);
             console.log('RESPONSE: ', grab.data);
             setNewDoctor(grab.data);
             console.log('New Doctor is', newDoctor);

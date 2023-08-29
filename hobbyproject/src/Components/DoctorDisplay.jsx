@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 //import { useState } from 'react';
 
 function Doctor({
-  number,name,companions,startYear,endYear,_id
+  number,actor,startYear,endYear,_id
 }) {
   const navigate = useNavigate();
   const params = useParams();
@@ -46,14 +46,14 @@ function Doctor({
         {/*  {`Companions: ${companions}`}*/}
         {/*</Card.Text>*/}
         <Card.Text>
-          {`Actor: ${name}`}
+          {`Actor: ${actor}`}
         </Card.Text>
         <Card.Text>
           {`From ${startYear} to ${endYear}`}
         </Card.Text>
       </Card.Body>
       <Button variant="info" type="button" onClick={() => navigate(`/edit/${_id}`)}>Edit</Button>
-      <Button variant="danger" type="button" onClick={() => navigate(`/delete/${name}`)}>Delete</Button>
+      <Button variant="danger" type="button" onClick={() => navigate(`/delete/${actor}`)}>Delete</Button>
     </Card>
   );
 }
@@ -62,7 +62,7 @@ export default Doctor;
 
 Doctor.propTypes = {
   number: PropTypes.string,
-  name: PropTypes.string,
+  actor: PropTypes.string,
   companions: PropTypes.array,
   startYear: PropTypes.number,
   endYear: PropTypes.number,

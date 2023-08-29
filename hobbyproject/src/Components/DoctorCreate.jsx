@@ -15,11 +15,11 @@ function DoctorCreate({number, name, companions, startYear, endYear}) {
         const trial = {
           "number": number,
           "companions": companions,
-          "name": name,
+          "actor": name,
           "startYear": startYear,
           "endYear": endYear
       }
-        const grab = await axios.post(`http://localhost:8080/doctor/write`,trial);
+        const grab = await axios.post(`http://localhost:8080/doctor`,trial);
         console.log('RESPONSE: ', grab.data);
         setNewDoctor(grab.data);
       } catch (err) {
@@ -31,7 +31,7 @@ function DoctorCreate({number, name, companions, startYear, endYear}) {
   
   console.log(newDoctor)
 
-  return <DoctorDisplay number={newDoctor.number} name={newDoctor.name} startYear={newDoctor.startYear} endYear={newDoctor.endYear} companions={newDoctor.companions}/>;
+  return <DoctorDisplay number={newDoctor.number} actor={newDoctor.actor} startYear={newDoctor.startYear} endYear={newDoctor.endYear} companions={newDoctor.companions}/>;
 }
 
 export default DoctorCreate;
