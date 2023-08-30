@@ -38,12 +38,12 @@ const CreateForm = () => {
 
 return (
     <>
-        <p>Create a Doctor</p>
+        <p>Create a Doctor, please fill in all fields</p>
         <p></p>
         <Form onSubmit={handleSubmit}>
             <InputGroup className="mb-3">
                 <Form.Label className="formLabel">Doctor Number</Form.Label>
-                <Form.Control placeholder="e.g. 1st" value={number} onChange={e => { setNumber(e.target.value) }} />
+                <Form.Control required placeholder="e.g. 1st" value={number} onChange={e => { setNumber(e.target.value) }} />
                 <Form.Text className="text-muted" >
                 </Form.Text>
                 <Button type="submit" >Submit</Button>
@@ -51,7 +51,7 @@ return (
 
             <InputGroup className="mb-3" >
                 <Form.Label className="formLabel">Actor </Form.Label>
-                <Form.Control placeholder="Enter actor's name" value={actor} onChange={e => { setActor(e.target.value) }} />
+                <Form.Control required placeholder="Enter actor's name" value={actor} onChange={e => { setActor(e.target.value) }} />
                 <Form.Text className="text-muted">
                 </Form.Text>
                 <Button type="submit" >Submit</Button>
@@ -59,7 +59,7 @@ return (
 
             <InputGroup className="mb-3" >
                 <Form.Label className="formLabel">Start Year </Form.Label>
-                <Form.Control placeholder="Enter start year" value={startYear} onChange={e => { setStartYear(e.target.value) }} />
+                <Form.Control required type="number" placeholder="Enter start year" value={startYear} onChange={e => { setStartYear(e.target.value) }} />
                 <Form.Text className="text-muted">
                 </Form.Text>
                 <Button type="submit" >Submit</Button>
@@ -67,7 +67,7 @@ return (
 
             <InputGroup className="mb-3" >
                 <Form.Label className="formLabel">End Year </Form.Label>
-                <Form.Control placeholder="Enter end
+                <Form.Control required type="number" placeholder="Enter end
                     year" value={endYear} onChange={e => { setEndYear(e.target.value) }} />
                 <Form.Text className="text-muted">
                 </Form.Text>

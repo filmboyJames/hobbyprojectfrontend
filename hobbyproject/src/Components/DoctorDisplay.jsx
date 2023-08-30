@@ -34,12 +34,14 @@ function Doctor({
   //
   //   }
   //   return image;
+  //
+  //   https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg
   // }
 
   console.log(params);
   return (
     <Card bg="dark" style={{ width: "20rem" }}>
-      <Card.Img variant="top" src='https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg' alt={`${number} Doctor`}/>
+      <Card.Img variant="top" src='https://upload.wikimedia.org/wikipedia/commons/1/18/Doctor-who-logo-removebg.png' alt={`${number} Doctor`}/>
       <Card.Body>
         <Card.Title>{number} Doctor</Card.Title>
         {/*<Card.Text>*/}

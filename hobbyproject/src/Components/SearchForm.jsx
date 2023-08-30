@@ -47,7 +47,7 @@ const DoctorForm = () => {
         <>
             <Form onSubmit={() => navigate(`/details/${actor}`)}>
                 <Form.Group className="mb-3"  >
-                    <Form.Label>Doctor Number</Form.Label>
+                    <Form.Label className="formLabel">Doctor Number</Form.Label>
                     <Form.Select value={number} onChange={e => { setNumber(e.target.value) }}>
                         {doctors.map((doctor) => {
                             return <option value={doctor.number}>{doctor.number}</option>
@@ -56,10 +56,10 @@ const DoctorForm = () => {
                     <Form.Text className="text-muted">
                         This will let you see a Doctor
                     </Form.Text>
-                    <Button type="button" onClick={e => numberClick(e,{number})} >Submit</Button>
+                    <Button class="margin-left" type="button" onClick={e => numberClick(e,{number})} >Submit</Button>
                 </Form.Group>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Actor</Form.Label>
+                    <Form.Label className="formLabel">Actor</Form.Label>
                     <Form.Select value={actor} onChange={e => { setActor(e.target.value) }}>
                         {doctors.map((doctor) => {
                             return <option value={doctor.actor}>{doctor.actor}</option>
@@ -68,7 +68,7 @@ const DoctorForm = () => {
                     <Form.Text className="text-muted">
                         Select Actor
                     </Form.Text>
-                    <Button type="submit" >Submit</Button>
+                    <Button type="submit" class="margin-left" >Submit</Button>
                 </Form.Group>
             </Form>
         </>

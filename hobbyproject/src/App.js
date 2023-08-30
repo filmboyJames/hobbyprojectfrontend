@@ -58,6 +58,7 @@ function App() {
             <Route path="/created/:actor" element={<DoctorGet />} />
             <Route path="/delete/:actor" element={<DoctorDeleteConfirm />} />
             <Route path="/deleted/:actor" element={<DoctorDelete actor="actor"/>} />
+            <Route path="/error" element={<TryAgain/>}/>
           </Routes>
         </Router>
       </header>
