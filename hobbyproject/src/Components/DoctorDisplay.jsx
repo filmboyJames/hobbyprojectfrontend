@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Card } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
-//import { useState } from 'react';
 
 function Doctor({
   number,actor,startYear,endYear,_id

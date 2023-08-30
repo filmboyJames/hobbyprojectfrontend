@@ -1,10 +1,9 @@
 import {
     Form, Button, InputGroup, Container, Row, Col
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom';
 import DoctorDisplay from "./DoctorDisplay";
 
 const EditForm = ({ current }) => {

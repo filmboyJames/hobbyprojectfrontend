@@ -37,7 +37,7 @@ function GetAllDoctors() {
                   <Col>
                     <DoctorDisplay
                         number={doctor.number} actor={doctor.actor} startYear={doctor.startYear}
-                        endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>
+                        endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id} />
                   </Col>
 
                 ))

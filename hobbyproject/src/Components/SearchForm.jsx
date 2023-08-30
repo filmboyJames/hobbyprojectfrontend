@@ -1,11 +1,9 @@
 import {
     Form, Button
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-
 
 const DoctorForm = () => {
     const params = useParams();
@@ -62,7 +60,7 @@ const DoctorForm = () => {
                     <Form.Label className="formLabel">Actor</Form.Label>
                     <Form.Select value={actor} onChange={e => { setActor(e.target.value) }}>
                         {doctors.map((doctor) => {
-                            return <option value={doctor.actor}>{doctor.actor}</option>
+                            return <option value={doctor.actor}>{doctor.actor} </option>
                         })}
                     </Form.Select>
                     <Form.Text className="text-muted">
